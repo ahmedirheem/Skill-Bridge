@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .wrapper {
+    width: 85%;
+    margin: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .wrapper {
+      width: 100%;
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wrapper {
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  /* src: url('../src/fonts/BeVietnamPro-Black.ttf'),
+  url('../src/fonts/BeVietnamPro-Bold.ttf'),
+  url('../src/fonts/BeVietnamPro-ExtraBold.ttf'),
+  url('../src/fonts/BeVietnamPro-Light.ttf'),
+  url('../src/fonts/BeVietnamPro-Medium.ttf'),
+  url('../src/fonts/BeVietnamPro-Regular.ttf'),
+  url('../src/fonts/BeVietnamPro-SemiBold.ttf'),
+  url('../src/fonts/BeVietnamPro-Thin.ttf'); */
+  font-weight: 400 500 600 700 800 900; 
+  font-style: normal;
+}

@@ -1,12 +1,1344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skill Bridge - Home</title>
   <link href="./dist/output.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <script src="js/jquery.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("[aria-label='Global'] button");
+      const mobileMenu = document.querySelector("[role='dialog']");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const closeButton = mobileMenu.querySelector("button");
+      closeButton.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        autoWidth: true,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        dots: false
+      })
+    })
+
+    const playVideo = () => {
+      const video = document.querySelector('.hero-video');
+      video.style.display = 'block';
+      video.play();
+
+      document.querySelector('.hero-overlay').style.display = 'none';
+      document.querySelector('.hero-thumbnail').style.display = 'none';
+    }
+
+  </script>
 </head>
-<body>
-  <h1 class="flex items-center justify-center h-screen">Hello From Tailwind</h1>
+
+<body class="bg-[rgb(247,247,248)] font-beVietnam">
+
+  <!-- Header Section -->
+  <header class="p-2 md:p-5">
+    <!-- Alert Section -->
+    <a href="./courses.html"
+      class="bg-mainOrange w-full rounded-md flex items-center justify-center gap-5 py-[14px] px-1">
+      <p class="text-white text-xs md:text-lg">Free Courses 🌟 Sale Ends Soon, Get It Now</p>
+      <img class="w-[20px] h-[20px]" src="./src/assets/icons/arrow-right-white.svg" alt="arrow">
+    </a>
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="flex items-center justify-between py-6" aria-label="Global">
+        <div class="flex mr-10">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Skill Bridge</span>
+            <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden order-4 ml-2">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <img class="h-8 w-8" src="./src/assets/icons/mobile-menu.svg" alt="menu">
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
+          <a href="./index.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Home</a>
+          <a href="./courses.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Courses</a>
+          <a href="./about.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">About Us</a>
+          <a href="./pricing.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Pricing</a>
+          <a href="./contact.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Contact</a>
+        </div>
+        <div class="flex justify-end gap-1 flex-grow lg:flex-grow-0">
+          <a href="./signup.html" class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md">Sign Up</a>
+          <a href="./login.html"
+            class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md bg-mainOrange text-white">Login</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Section -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="./index.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Skill Bridge</span>
+              <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="logo">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="./courses.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Courses</a>
+                <a href="./about.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About
+                  Us</a>
+                <a href="./pricing.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="./contact.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="text-center py-20">
+        <div
+          class="relative bg-white flex items-center gap-2 py-3 pr-6 pl-3 rounded-md border border-[rgb(241,241,243)] w-fit m-auto">
+          <img class="w-[39px] h-[43px] absolute top-[-30px] left-[-25px]" src="./src/assets/icons/Abstract Line.svg"
+            alt="decor">
+          <span class="w-12 h-12 rounded-md bg-lightOrange flex items-center justify-center">
+            <img class="w-[24px] h-[24px]" src="./src/assets/icons/power-icon.svg" alt="power">
+          </span>
+          <h1 class="text-base md:text-[36px] font-semibold">
+            <span class="text-mainOrange">Unlock</span> Your Creative Potential
+          </h1>
+        </div>
+
+        <h3 class="font-medium text-[24px] md:text-[28px] mt-4">
+          with Online Design and Development Courses.
+        </h3>
+        <p class="mt-2 text-pretty text-[rgb(38,38,38)] sm:text-xl/8">
+          Learn from Industry Experts and Enhance Your Skills.
+        </p>
+        <div class="mt-12 flex items-center justify-center gap-x-6">
+          <a href="./courses.html"
+            class="rounded-md bg-mainOrange py-3 px-4 text-sm md:py-3 md:px-7 lg:text-base font-semibold text-white shadow-sm hover:bg-mainOrange hover:opacity-75">Explore
+            Courses</a>
+          <a href="./pricing.html"
+            class="py-3 px-4 text-sm md:py-3 md:px-7 lg:text-base font-medium text-gray-900 bg-white rounded-md">View
+            Pricing</a>
+        </div>
+      </div>
+
+      <!-- Partners Section -->
+      <div
+        class="owl-carousel w-full bg-white p-[10px] md:p-[24px] lg:p-[30px] mb-[30px] lg:mb-[80px] xl:mb-[100px] border border-[rgb(241,241,243)] rounded-md">
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/zapier.svg" alt="zapier">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/spotify.svg" alt="spotify">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/zoom.svg" alt="zoom">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/amazon.svg" alt="amazon">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/adobe.svg" alt="adobe">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/notion.svg" alt="notion">
+        </div>
+        <div
+          class="flex items-center justify-center  w-[112px] h-[64px] md:w-[175px] md:h-[68px] lg:w-[220px] lg:h-[94px] border-r border-slate-300">
+          <img class="h-[24px] md:h-[28px] lg:h-[34px]" src="./src/assets/icons/netflix.svg" alt="netflix">
+        </div>
+
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-wrapper w-full relative rounded-lg cursor-pointer" onclick="playVideo()">
+
+        <img class="hero-thumbnail w-full" src="./src/assets/images/home-banner.png" alt="video thumbnail">
+
+        <div
+          class="hero-overlay bg-[rgba(0,0,0,0.2)] w-full h-full absolute top-0 left-0 z-20 flex items-center justify-center">
+          <span
+            class="flex items-center justify-center w-[72px] h-[72px] bg-[rgba(255,255,255,0.2)] rounded-full border-[6px] border-[rgba(255,255,255,0.3)]">
+            <img class="w-[44px] h-[44px]" src="./src/assets/icons/play.svg" alt="play">
+          </span>
+        </div>
+
+        <video class="hero-video w-full h-full hidden" controls>
+          <source src="./src/assets/videos/video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </header>
+
+  <!-- Benefits Section -->
+  <div id="benefits" class="wrapper my-[50px] lg:my-[100px]">
+    <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold">Benefits</h3>
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+        <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+          dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+        <a href="#"
+          class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-white rounded-md">
+          View All
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xl:grid-cols-3 gap-4">
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">01</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">02</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">03</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">04</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">05</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 rounded-md bg-white p-[30px]">
+        <span class="font-bold text-[50px] lg:text-[60px] 2xl:text-[80px] self-end">06</span>
+        <div class="content">
+          <h3 class="text-lg font-semibold mb-[10px]">Flexible Learning Schedule</h3>
+          <p class="text-[rgba(76,76,77,1)] leading-snug">Fit your coursework around your existing commitments and
+            obligations.</p>
+        </div>
+        <a href="#"
+          class="flex items-center justify-center w-[54px] h-[54px] 2xl:w-[64px] 2xl:h-[64px] bg-lightGray border border-[rgba(241,241,243,1)] rounded-md self-end">
+          <img class="w-[26px] h-[26px] 2xl:w-8 2xl:h-8" src="./src/assets/icons/orange-right-top-arrow.svg"
+            alt="arrow">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses Section -->
+  <div id="courses" class="wrapper">
+    <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold">Our Courses</h3>
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+        <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+          dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+        <a href="#"
+          class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-white rounded-md">
+          View All
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] lg:grid-cols-2 [@media(min-width:1900px)]:grid-cols-3 gap-4 mx-auto">
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-1.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">4
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Beginner</span>
+          </div>
+          <h4 class="font-medium text-lg">By John Smith</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            Web Design Fundamentals
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop the
+            skills to create visually appealing and user-friendly websites.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-2.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">6
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Intermediate</span>
+          </div>
+          <h4 class="font-medium text-lg">By Emily Johnson</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            UI/UX Design
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design
+            principles, wireframing, prototyping, and usability testing techniques.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-3.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">8
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Intermediate</span>
+          </div>
+          <h4 class="font-medium text-lg">By David Brown</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            Mobile App Development
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Dive into the world of mobile app development. Learn to build native iOS and Android applications using
+            industry-leading frameworks like Swift and Kotlin.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-4.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">10
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Beginner</span>
+          </div>
+          <h4 class="font-medium text-lg">By Sarah Thompson</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            Graphic Design for Beginners
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Discover the fundamentals of graphic design, including typography, color theory, layout design, and image
+            manipulation techniques. Create visually stunning designs for print and digital media.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-5.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">10
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Intermediate</span>
+          </div>
+          <h4 class="font-medium text-lg">By Michael Adams</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            Front-End Web Development
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks like
+            Bootstrap and React. Build interactive and responsive websites.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+      <div
+        class="flex flex-col items-start justify-between max-w-[760px] gap-6 bg-white rounded-md border border-[rgba(241,241,243,1)] p-8">
+        <img src="./src/assets/images/home-courses-6.png" alt="">
+
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex items-center gap-2">
+            <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">6
+              Weeks</span>
+            <span
+              class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Advanced</span>
+          </div>
+          <h4 class="font-medium text-lg">By John Smith</h4>
+        </div>
+
+        <div class="group relative">
+          <h3 class="my-3 text-2xl font-semibold text-[rgba(38,38,38,1)]">
+            Advanced JavaScript
+          </h3>
+          <p class="text-[rgba(76,76,77,1)]">
+            Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes,
+            asynchronous programming, and ES6 features. Build complex applications with confidence.
+          </p>
+        </div>
+
+        <a href="#" class="bg-lightGray hover:bg-[#ebebebcb] block rounded-md py-4 w-full text-center font-medium">
+          Get it Now
+        </a>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- Testimonials Section -->
+  <div id="testimonials" class="wrapper my-[50px] lg:my-[100px]">
+
+    <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold">Our Testimonials</h3>
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+        <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+          dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+        <a href="#"
+          class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-white rounded-md">
+          View All
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div class="bg-white rounded-md border border-[rgba(241,241,243,1)]">
+        <div class="p-4 lg:p-8 pb-0">
+          <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-2 lg:mb-8">
+            The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive,
+            and the interactive learning environment was engaging. I highly recommend it!
+          </p>
+        </div>
+        <div class="flex items-center justify-between px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+          <div class="flex items-center gap-4">
+            <img class="w-50 h-50" src="./src/assets/images/testimonial-1.png" alt="">
+            <h4 class="font-semibold">Sarah L</h4>
+          </div>
+          <a href="#"
+            class="py-3 px-3 text-sm md:py-3 md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+            Read Full Story
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-[rgba(241,241,243,1)]">
+        <div class="p-4 lg:p-8 pb-0">
+          <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-2 lg:mb-8">
+            The UI/UX design course exceeded my expectations. The instructor's expertise and practical assignments
+            helped me improve my design skills. I feel more confident in my career now. Thank you! </p>
+        </div>
+        <div class="flex items-center justify-between px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+          <div class="flex items-center gap-4">
+            <img class="w-50 h-50" src="./src/assets/images/testimonial-2.png" alt="">
+            <h4 class="font-semibold">Jason M</h4>
+          </div>
+          <a href="#"
+            class="py-3 px-3 text-sm md:py-3 md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+            Read Full Story
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-[rgba(241,241,243,1)]">
+        <div class="p-4 lg:p-8 pb-0">
+          <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-2 lg:mb-8">
+            The mobile app development course was fantastic! The step-by-step tutorials and hands-on projects helped me
+            grasp the concepts easily. I'm now building my own app. Great course!
+          </p>
+        </div>
+        <div class="flex items-center justify-between px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+          <div class="flex items-center gap-4">
+            <img class="w-50 h-50" src="./src/assets/images/testimonial-3.png" alt="">
+            <h4 class="font-semibold">Emily R</h4>
+          </div>
+          <a href="#"
+            class="py-3 px-3 text-sm md:py-3 md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+            Read Full Story
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-md border border-[rgba(241,241,243,1)]">
+        <div class="p-4 lg:p-8 pb-0">
+          <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-2 lg:mb-8">
+            I enrolled in the graphic design course as a beginner, and it was the perfect starting point. The
+            instructor's guidance and feedback improved my design abilities significantly. I'm grateful for this course!
+          </p>
+        </div>
+        <div class="flex items-center justify-between px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+          <div class="flex items-center gap-4">
+            <img class="w-50 h-50" src="./src/assets/images/testimonial-4.png" alt="">
+            <h4 class="font-semibold">Michael K</h4>
+          </div>
+          <a href="#"
+            class="py-3 px-3 text-sm md:py-3 md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+            Read Full Story
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Pricing Section -->
+  <div class="wrapper">
+
+    <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold">Our Pricing</h3>
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+        <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+          dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+        <div class="flex items-center p-3 rounded-md bg-white">
+          <button id="monthly-pricing-btn"
+            class="inline-block w-fit py-2 px-3 text-sm md:py-3 md:px-6 lg:text-base font-medium text-white bg-mainOrange rounded-md">
+            Monthly
+          </button>
+          <button id="yearly-pricing-btn"
+            class="inline-block w-fit py-2 px-3 text-sm md:py-3 md:px-6 lg:text-base font-medium text-[rgba(76,76,77,1)] bg-white rounded-md">
+            Yearly
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 items-center justify-center lg:grid-cols-2 gap-20 md:gap-8 bg-white rounded-2xl p-[80px] md:p-[30px] w-full max-w-[2000px] mx-auto">
+
+      <div class="monthly-pricing-card relative rounded-3xl bg-[rgba(252,252,253,1)] p-4 md:p-10 w-full max-w-[1000px]">
+        <span
+          class="bg-[rgba(255,249,240,1)] w-full rounded-md flex items-center justify-center py-[12px] px-1 mb-12 border border-[rgba(255,234,204,1)]">
+          <p class="text-lg font-medium">Free Plan</p>
+        </span>
+
+        <p class="mt-4 flex items-baseline justify-center gap-x-2 ">
+          <span class="text-7xl font-semibold tracking-tight">$0</span>
+          <span class="text-base text-gray-400">/month</span>
+        </p>
+
+        <div class="bg-white rounded-md overflow-hidden pt-10 text-center mt-12">
+          <p class="text-lg font-medium text-[rgba(38,38,38,1)]">Available Features</p>
+
+          <ul role="list" class="space-y-3 text-sm/6 text-[rgba(76,76,77,1)] mt-5 lg:px-8">
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Access to selected free courses.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Limited course materials and resources.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Basic community support.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              No certification upon completion.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Ad-supported platform.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.28033 5.21967C5.98744 4.92678 5.51256 4.92678 5.21967 5.21967C4.92678 5.51256 4.92678 5.98744 5.21967 6.28033L8.93934 10L5.21967 13.7197C4.92678 14.0126 4.92678 14.4874 5.21967 14.7803C5.51256 15.0732 5.98744 15.0732 6.28033 14.7803L10 11.0607L13.7197 14.7803C14.0126 15.0732 14.4874 15.0732 14.7803 14.7803C15.0732 14.4874 15.0732 14.0126 14.7803 13.7197L11.0607 10L14.7803 6.28033C15.0732 5.98744 15.0732 5.51256 14.7803 5.21967C14.4874 4.92678 14.0126 4.92678 13.7197 5.21967L10 8.93934L6.28033 5.21967Z"
+                    fill="#262626" />
+                </svg>
+              </span>
+              Access to exclusive Pro Plan community forums.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.28033 5.21967C5.98744 4.92678 5.51256 4.92678 5.21967 5.21967C4.92678 5.51256 4.92678 5.98744 5.21967 6.28033L8.93934 10L5.21967 13.7197C4.92678 14.0126 4.92678 14.4874 5.21967 14.7803C5.51256 15.0732 5.98744 15.0732 6.28033 14.7803L10 11.0607L13.7197 14.7803C14.0126 15.0732 14.4874 15.0732 14.7803 14.7803C15.0732 14.4874 15.0732 14.0126 14.7803 13.7197L11.0607 10L14.7803 6.28033C15.0732 5.98744 15.0732 5.51256 14.7803 5.21967C14.4874 4.92678 14.0126 4.92678 13.7197 5.21967L10 8.93934L6.28033 5.21967Z"
+                    fill="#262626" />
+                </svg>
+              </span>
+              Early access to new courses and updates.
+            </li>
+
+          </ul>
+          <a href="#" aria-describedby="tier-enterprise"
+            class="mt-8 block bg-mainOrange px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 sm:mt-10">
+            Get Started</a>
+        </div>
+      </div>
+
+      <div class="monthly-pricing-card relative rounded-3xl bg-[rgba(252,252,253,1)] p-4 md:p-10 w-full max-w-[1000px]">
+        <span
+          class="bg-[rgba(255,249,240,1)] w-full rounded-md flex items-center justify-center py-[12px] px-1 mb-12 border border-[rgba(255,234,204,1)]">
+          <p class="text-lg font-medium">Pro Plan</p>
+        </span>
+
+        <p class="mt-4 flex items-baseline justify-center gap-x-2 ">
+          <span class="text-7xl font-semibold tracking-tight">$79</span>
+          <span class="text-base text-gray-400">/month</span>
+        </p>
+
+        <div class="bg-white rounded-md overflow-hidden pt-10 text-center mt-12">
+          <p class="text-lg font-medium text-[rgba(38,38,38,1)]">Available Features</p>
+
+          <ul role="list" class="space-y-3 text-sm/6 text-[rgba(76,76,77,1)] mt-5 lg:px-8">
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Unlimited access to all courses.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Unlimited course materials and resources.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Priority support from instructors.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Course completion certificates.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Ad-free experience.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Access to exclusive Pro Plan community forums.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Early access to new courses and updates.
+            </li>
+          </ul>
+          <a href="#" aria-describedby="tier-enterprise"
+            class="mt-8 block bg-mainOrange px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 sm:mt-10">
+            Get Started</a>
+        </div>
+      </div>
+
+
+      <div
+        class="yearly-pricing-card hidden relative rounded-3xl bg-[rgba(252,252,253,1)] p-4 md:p-10 w-full max-w-[1000px]">
+        <span
+          class="bg-[rgba(255,249,240,1)] w-full rounded-md flex items-center justify-center py-[12px] px-1 mb-12 border border-[rgba(255,234,204,1)]">
+          <p class="text-lg font-medium">Free Plan</p>
+        </span>
+
+        <p class="mt-4 flex items-baseline justify-center gap-x-2 ">
+          <span class="text-7xl font-semibold tracking-tight">$0</span>
+          <span class="text-base text-gray-400">/year</span>
+        </p>
+
+        <div class="bg-white rounded-md overflow-hidden pt-10 text-center mt-12">
+          <p class="text-lg font-medium text-[rgba(38,38,38,1)]">Available Features</p>
+
+          <ul role="list" class="space-y-3 text-sm/6 text-[rgba(76,76,77,1)] mt-5 lg:px-8">
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Access to selected free courses.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Limited course materials and resources.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Basic community support.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              No certification upon completion.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Ad-supported platform.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.28033 5.21967C5.98744 4.92678 5.51256 4.92678 5.21967 5.21967C4.92678 5.51256 4.92678 5.98744 5.21967 6.28033L8.93934 10L5.21967 13.7197C4.92678 14.0126 4.92678 14.4874 5.21967 14.7803C5.51256 15.0732 5.98744 15.0732 6.28033 14.7803L10 11.0607L13.7197 14.7803C14.0126 15.0732 14.4874 15.0732 14.7803 14.7803C15.0732 14.4874 15.0732 14.0126 14.7803 13.7197L11.0607 10L14.7803 6.28033C15.0732 5.98744 15.0732 5.51256 14.7803 5.21967C14.4874 4.92678 14.0126 4.92678 13.7197 5.21967L10 8.93934L6.28033 5.21967Z"
+                    fill="#262626" />
+                </svg>
+              </span>
+              Access to exclusive Pro Plan community forums.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6.28033 5.21967C5.98744 4.92678 5.51256 4.92678 5.21967 5.21967C4.92678 5.51256 4.92678 5.98744 5.21967 6.28033L8.93934 10L5.21967 13.7197C4.92678 14.0126 4.92678 14.4874 5.21967 14.7803C5.51256 15.0732 5.98744 15.0732 6.28033 14.7803L10 11.0607L13.7197 14.7803C14.0126 15.0732 14.4874 15.0732 14.7803 14.7803C15.0732 14.4874 15.0732 14.0126 14.7803 13.7197L11.0607 10L14.7803 6.28033C15.0732 5.98744 15.0732 5.51256 14.7803 5.21967C14.4874 4.92678 14.0126 4.92678 13.7197 5.21967L10 8.93934L6.28033 5.21967Z"
+                    fill="#262626" />
+                </svg>
+              </span>
+              Early access to new courses and updates.
+            </li>
+
+          </ul>
+          <a href="#" aria-describedby="tier-enterprise"
+            class="mt-8 block bg-mainOrange px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 sm:mt-10">
+            Get Started</a>
+        </div>
+      </div>
+
+      <div
+        class="yearly-pricing-card hidden relative rounded-3xl bg-[rgba(252,252,253,1)] p-4 md:p-10 w-full max-w-[1000px]">
+        <span
+          class="bg-[rgba(255,249,240,1)] w-full rounded-md flex items-center justify-center py-[12px] px-1 mb-12 border border-[rgba(255,234,204,1)]">
+          <p class="text-lg font-medium">Pro Plan</p>
+        </span>
+
+        <p class="mt-4 flex items-baseline justify-center gap-x-2 ">
+          <span class="text-7xl font-semibold tracking-tight">$799</span>
+          <span class="text-base text-gray-400">/yea</span>
+        </p>
+
+        <div class="bg-white rounded-md overflow-hidden pt-10 text-center mt-12">
+          <p class="text-lg font-medium text-[rgba(38,38,38,1)]">Available Features</p>
+
+          <ul role="list" class="space-y-3 text-sm/6 text-[rgba(76,76,77,1)] mt-5 lg:px-8">
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Unlimited access to all courses.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Unlimited course materials and resources.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Priority support from instructors.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Course completion certificates.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Ad-free experience.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Access to exclusive Pro Plan community forums.
+            </li>
+
+            <li class="flex items-center gap-x-3 border border-[rgba(241,241,243,1)] p-3 rounded-md">
+              <span
+                class="min-w-8 min-h-8 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+                <svg class="h-5 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                  data-slot="icon">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              Early access to new courses and updates.
+            </li>
+          </ul>
+          <a href="#" aria-describedby="tier-enterprise"
+            class="mt-8 block bg-mainOrange px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 sm:mt-10">
+            Get Started</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAQs Section -->
+  <div id="faq"
+    class="wrapper my-[50px] lg:my-[100px] bg-white rounded-xl md:p-[100px] flex flex-col lg:flex-row justify-between gap-14">
+
+    <div class="w-full lg:w-[61%]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold leading-tight mb-2">Frequently <br
+          class="hidden lg:block"> Asked Questions
+      </h3>
+      <div class="flex flex-col items-start  justify-between gap-5">
+        <p class="w-full text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)] mb-8">
+          Still you have any questions? Contact our Team via support@skillbridge.com
+        </p>
+        <a href="#"
+          class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 rounded-md border border-[rgba(241,241,243,1)]">
+          See All FAQ's
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div x-data="{ open: false }" class="border border-[rgba(241,241,243,1)] py-4 px-6 mb-6 rounded-md">
+        <button @click="open = !open" :class="{'border-b border-[rgba(241, 241, 243, 1)] pb-6': open}"
+          class="flex items-center justify-between w-full text-left">
+          <span class="text-lg font-medium text-[rgba(51,51,51,1)] ">Can I enroll in multiple courses at once?</span>
+          <span
+            class="min-w-10 min-h-10 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+            <svg :class="{'rotate-45': open}" class="w-7 h-7 transition-transform transform" width="28" height="28"
+              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 14H14M21 14H14M14 14V7M14 14V21" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div x-show="open" x-transition class="mt-8 text-gray-600">
+          <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.</p>
+        </div>
+        <a href="#" x-show="open" x-transition
+          class="mt-8 p-4 bg-[rgba(247,247,248,1)] border border-[rgba(241, 241, 243, 1)] rounded-md flex items-center justify-between">
+          <p class="font-medium text-[rgba(51,51,51,1)]">Enrollment Process for Different Courses</p>
+          <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99967 14H21.583M21.583 14L14.583 7M21.583 14L14.583 21" stroke="#4C4C4C" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div x-data="{ open: false }" class="border border-[rgba(241,241,243,1)] py-4 px-6 mb-6 rounded-md">
+        <button @click="open = !open" :class="{'border-b border-[rgba(241, 241, 243, 1)] pb-6': open}"
+          class="flex items-center justify-between w-full text-left">
+          <span class="text-lg font-medium text-[rgba(51,51,51,1)] ">What kind of support can I expect from
+            instructors?</span>
+          <span
+            class="min-w-10 min-h-10 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+            <svg :class="{'rotate-45': open}" class="w-7 h-7 transition-transform transform" width="28" height="28"
+              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 14H14M21 14H14M14 14V7M14 14V21" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div x-show="open" x-transition class="mt-8 text-gray-600">
+          <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.</p>
+        </div>
+        <a href="#" x-show="open" x-transition
+          class="mt-8 p-4 bg-[rgba(247,247,248,1)] border border-[rgba(241, 241, 243, 1)] rounded-md flex items-center justify-between">
+          <p class="font-medium text-[rgba(51,51,51,1)]">Enrollment Process for Different Courses</p>
+          <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99967 14H21.583M21.583 14L14.583 7M21.583 14L14.583 21" stroke="#4C4C4C" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div x-data="{ open: false }" class="border border-[rgba(241,241,243,1)] py-4 px-6 mb-6 rounded-md">
+        <button @click="open = !open" :class="{'border-b border-[rgba(241, 241, 243, 1)] pb-6': open}"
+          class="flex items-center justify-between w-full text-left">
+          <span class="text-lg font-medium text-[rgba(51,51,51,1)] ">Are the courses self-paced or do they have specific
+            start and end dates?</span>
+          <span
+            class="min-w-10 min-h-10 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+            <svg :class="{'rotate-45': open}" class="w-7 h-7 transition-transform transform" width="28" height="28"
+              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 14H14M21 14H14M14 14V7M14 14V21" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div x-show="open" x-transition class="mt-8 text-gray-600">
+          <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.</p>
+        </div>
+        <a href="#" x-show="open" x-transition
+          class="mt-8 p-4 bg-[rgba(247,247,248,1)] border border-[rgba(241, 241, 243, 1)] rounded-md flex items-center justify-between">
+          <p class="font-medium text-[rgba(51,51,51,1)]">Enrollment Process for Different Courses</p>
+          <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99967 14H21.583M21.583 14L14.583 7M21.583 14L14.583 21" stroke="#4C4C4C" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div x-data="{ open: false }" class="border border-[rgba(241,241,243,1)] py-4 px-6 mb-6 rounded-md">
+        <button @click="open = !open" :class="{'border-b border-[rgba(241, 241, 243, 1)] pb-6': open}"
+          class="flex items-center justify-between w-full text-left">
+          <span class="text-lg font-medium text-[rgba(51,51,51,1)] ">Are there any prerequisites for the courses?</span>
+          <span
+            class="min-w-10 min-h-10 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+            <svg :class="{'rotate-45': open}" class="w-7 h-7 transition-transform transform" width="28" height="28"
+              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 14H14M21 14H14M14 14V7M14 14V21" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div x-show="open" x-transition class="mt-8 text-gray-600">
+          <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.</p>
+        </div>
+        <a href="#" x-show="open" x-transition
+          class="mt-8 p-4 bg-[rgba(247,247,248,1)] border border-[rgba(241, 241, 243, 1)] rounded-md flex items-center justify-between">
+          <p class="font-medium text-[rgba(51,51,51,1)]">Enrollment Process for Different Courses</p>
+          <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99967 14H21.583M21.583 14L14.583 7M21.583 14L14.583 21" stroke="#4C4C4C" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div x-data="{ open: false }" class="border border-[rgba(241,241,243,1)] py-4 px-6 mb-6 rounded-md">
+        <button @click="open = !open" :class="{'border-b border-[rgba(241, 241, 243, 1)] pb-6': open}"
+          class="flex items-center justify-between w-full text-left">
+          <span class="text-lg font-medium text-[rgba(51,51,51,1)] ">Can I download the course materials for offline
+            access?</span>
+          <span
+            class="min-w-10 min-h-10 flex items-center justify-center bg-lightOrange rounded-md border border-[rgba(241,241,243,1)]">
+            <svg :class="{'rotate-45': open}" class="w-7 h-7 transition-transform transform" width="28" height="28"
+              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 14H14M21 14H14M14 14V7M14 14V21" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div x-show="open" x-transition class="mt-8 text-gray-600">
+          <p>Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.</p>
+        </div>
+        <a href="#" x-show="open" x-transition
+          class="mt-8 p-4 bg-[rgba(247,247,248,1)] border border-[rgba(241, 241, 243, 1)] rounded-md flex items-center justify-between">
+          <p class="font-medium text-[rgba(51,51,51,1)]">Enrollment Process for Different Courses</p>
+          <span class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99967 14H21.583M21.583 14L14.583 7M21.583 14L14.583 21" stroke="#4C4C4C" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="pt-[100px] pb-[30px] bg-white">
+    <div class="wrapper flex flex-wrap gap-10 border-b border-[rgba(241, 241, 243, 1)] mb-8">
+
+      <div class="flex-grow">
+        <img class="w-14 h-14 mb-10" src="./src/assets/icons/Logo.svg" alt="logo">
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/email.svg" alt="email">
+          <p>hello@skillbridge.com</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/phone.svg" alt="phone">
+          <p>+91 91813 23 2309</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/location-icon.svg" alt="location">
+          <p>Somewhere in the World</p>
+        </span>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">Home</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">Benefits</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">Our Courses</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">Our Testimonials</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">Our FAQ</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Company</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Achievements</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Our Goals</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <div class="flex items-center gap-2">
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.facebook.com">
+            <img src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.x.com">
+            <img src="./src/assets/icons/twitter-icon.svg" alt="twitter">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.linkedin.com">
+            <img src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-[rgba(101,101,103,1)]">© 2023 Skillbridge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const monthlyPricingBtn = document.getElementById('monthly-pricing-btn')
+    const yearlyPricingBtn = document.getElementById('yearly-pricing-btn')
+    const monthlyPricingCards = document.querySelectorAll('.monthly-pricing-card')
+    const yearlyPricingCards = document.querySelectorAll('.yearly-pricing-card')
+
+    function toggleDisplay(elements, displayStyle) {
+      elements.forEach(card => {
+        card.style.display = displayStyle;
+      });
+    }
+
+    function togglePricing(isMonthly) {
+      toggleDisplay(monthlyPricingCards, isMonthly ? 'block' : 'none');
+      toggleDisplay(yearlyPricingCards, isMonthly ? 'none' : 'block');
+
+      monthlyPricingBtn.style.background = isMonthly ? 'rgba(255, 149, 0, 1)' : '#fff';
+      monthlyPricingBtn.style.color = isMonthly ? '#fff' : 'rgba(76,76,77,1)';
+      yearlyPricingBtn.style.background = isMonthly ? '#fff' : 'rgba(255, 149, 0, 1)';
+      yearlyPricingBtn.style.color = isMonthly ? 'rgba(76,76,77,1)' : '#fff';
+    }
+
+    monthlyPricingBtn.addEventListener('click', () => togglePricing(true));
+    yearlyPricingBtn.addEventListener('click', () => togglePricing(false));
+
+  </script>
+
 </body>
+
 </html>
