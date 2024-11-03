@@ -1,11 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skill Bridge - Courses</title>
+  <link href="./dist/output.css" rel="stylesheet">
+
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+
+  <script>
+    // Menu Toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("[aria-label='Global'] button");
+      const mobileMenu = document.querySelector("[role='dialog']");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const closeButton = mobileMenu.querySelector("button");
+      closeButton.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+  </script>
+
 </head>
-<body>
-  
+
+<body class="bg-[rgb(247,247,248)] font-beVietnam">
+
+  <!-- Header Section -->
+  <header class="p-2 md:p-5">
+
+    <!-- Alert Section -->
+    <a href="./courses.html"
+      class="bg-mainOrange w-full rounded-md flex items-center justify-center gap-5 py-[14px] px-1">
+      <p class="text-white text-xs md:text-lg">Free Courses 🌟 Sale Ends Soon, Get It Now</p>
+      <img class="w-[20px] h-[20px]" src="./src/assets/icons/arrow-right-white.svg" alt="arrow">
+    </a>
+    <div class="wrapper">
+
+      <!-- Navbar Section -->
+      <nav class="flex items-center justify-between py-6" aria-label="Global">
+        <div class="flex mr-10">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Skill Bridge</span>
+            <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden order-4 ml-2">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <img class="h-8 w-8" src="./src/assets/icons/mobile-menu.svg" alt="menu">
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
+          <a href="./index.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Home</a>
+          <a href="./courses.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Courses</a>
+          <a href="./about.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">About Us</a>
+          <a href="./pricing.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Pricing</a>
+          <a href="./contact.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Contact</a>
+        </div>
+        <div class="flex justify-end gap-1 flex-grow lg:flex-grow-0">
+          <a href="./signup.html" class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md">Sign Up</a>
+          <a href="./login.html"
+            class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md bg-mainOrange text-white">Login</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Section -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="./index.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Skill Bridge</span>
+              <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="logo">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="./courses.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Courses</a>
+                <a href="./about.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About
+                  Us</a>
+                <a href="./pricing.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="./contact.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Courses Section -->
+
+
+  <div class="my-12 md:my-[80px] mx-2 md:mx-5 pb-8 border-b border-[rgba(228,228,231,1)]">
+    <div class="wrapper">
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-4 md:gap-[100px]">
+        <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold flex-1">Online Courses on Design and
+          Development</h3>
+        <p class="text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)] flex-1">
+          Welcome to our online course page, where you can enhance your skills in design and development. Choose from
+          our carefully curated selection of 10 courses designed to provide you with comprehensive knowledge and
+          practical experience. Explore the courses below and find the perfect fit for your learning journey.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <!-- Course Item -->
+    <div class="my-[50px] lg:my-[100px] bg-white rounded-xl p-6 lg:p-10 2xl:p-[50px]">
+      <!-- Header -->
+      <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+        <h3 class="text-[18px] lg-text-[20px] 2xl:text-[24px] font-semibold">Web Design Fundamentals</h3>
+        <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+          <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+            Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop the skills to create visually appealing and user-friendly websites.
+          </p>
+          <a href="#"
+            class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-[rgba(252,252,253,1)] rounded-md border border-[rgba(241,241,243,1)]">
+            View Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        class="flex items-center justify-between gap-[10px] lg-[20px] 2xl:[30px] h-[100px] lg:h-[280px] 2xl:h-[400px] mb-6">
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/home-courses-1.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-02.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-03.png" alt="course">
+        </div>
+      </div>
+
+      <!-- Duration -->
+      <div class="flex items-center justify-between gap-x-4 w-full flex-wrap mb-10">
+        <div class="flex items-center gap-2">
+          <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">4
+            Weeks</span>
+          <span
+            class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Beginner</span>
+        </div>
+        <h4 class="font-semibold text-lg">By John Smith</h4>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="border border-[rgba(241,241,243,1)] rounded-lg px-6 md:px-0">
+        <div class="border-b border-[rgba(241,241,243,1)] px-0 md:px-5 py-5 ">
+          <h3 class="font-semibold">Curriculum</h3>
+        </div>
+        <div class="md:py-6 flex flex-col md:flex-row items-start justify-evenly">
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">01</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to HTML</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">02</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Styling with CSS</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">03</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to Responsive Design</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">04</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Design Principles for Web</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">05</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Building a Basic Website</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Item -->
+    <div class="my-[50px] lg:my-[100px] bg-white rounded-xl p-6 lg:p-10 2xl:p-[50px]">
+      <!-- Header -->
+      <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+        <h3 class="text-[18px] lg-text-[20px] 2xl:text-[24px] font-semibold">UI/UX Design</h3>
+        <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+          <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+            Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design principles, wireframing, prototyping, and usability testing techniques.
+          </p>
+          <a href="#"
+            class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-[rgba(252,252,253,1)] rounded-md border border-[rgba(241,241,243,1)]">
+            View Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        class="flex items-center justify-between gap-[10px] lg-[20px] 2xl:[30px] h-[100px] lg:h-[280px] 2xl:h-[400px] mb-6">
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/home-courses-2.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-12.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-13.png" alt="course">
+        </div>
+      </div>
+
+      <!-- Duration -->
+      <div class="flex items-center justify-between gap-x-4 w-full flex-wrap mb-10">
+        <div class="flex items-center gap-2">
+          <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">
+            6 Weeks</span>
+          <span
+            class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Intermediate</span>
+        </div>
+        <h4 class="font-semibold text-lg">By Emily Johnson</h4>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="border border-[rgba(241,241,243,1)] rounded-lg px-6 md:px-0">
+        <div class="border-b border-[rgba(241,241,243,1)] px-0 md:px-5 py-5 ">
+          <h3 class="font-semibold">Curriculum</h3>
+        </div>
+        <div class="md:py-6 flex flex-col md:flex-row items-start justify-evenly">
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">01</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to UI/UX Design</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">02</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">User Research and Personas</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">03</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Wireframing and Prototyping</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">04</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Visual Design and Branding</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">05</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Usability Testing and Iteration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Item -->
+    <div class="my-[50px] lg:my-[100px] bg-white rounded-xl p-6 lg:p-10 2xl:p-[50px]">
+      <!-- Header -->
+      <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+        <h3 class="text-[18px] lg-text-[20px] 2xl:text-[24px] font-semibold">Mobile App Development</h3>
+        <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+          <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+            Dive into the world of mobile app development. Learn to build native iOS and Android applications using industry-leading frameworks like Swift and Kotlin.
+          </p>
+          <a href="#"
+            class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-[rgba(252,252,253,1)] rounded-md border border-[rgba(241,241,243,1)]">
+            View Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        class="flex items-center justify-between gap-[10px] lg-[20px] 2xl:[30px] h-[100px] lg:h-[280px] 2xl:h-[400px] mb-6">
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/home-courses-3.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-22.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-23.png" alt="course">
+        </div>
+      </div>
+
+      <!-- Duration -->
+      <div class="flex items-center justify-between gap-x-4 w-full flex-wrap mb-10">
+        <div class="flex items-center gap-2">
+          <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">
+            8 Weeks</span>
+          <span
+            class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">        <h4 class="font-semibold text-lg">Intermediate</h4>
+          </span>
+        </div>
+        <h4 class="font-semibold text-lg">By David Brown </h4>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="border border-[rgba(241,241,243,1)] rounded-lg px-6 md:px-0">
+        <div class="border-b border-[rgba(241,241,243,1)] px-0 md:px-5 py-5 ">
+          <h3 class="font-semibold">Curriculum</h3>
+        </div>
+        <div class="md:py-6 flex flex-col md:flex-row items-start justify-evenly">
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">01</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to Mobile App Development</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">02</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Fundamentals of Swift Programming (iOS)</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">03</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Fundamentals of Kotlin Programming (Android)</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">04</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Building User Interfaces</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">05</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">App Deployment and Testing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Item -->
+    <div class="my-[50px] lg:my-[100px] bg-white rounded-xl p-6 lg:p-10 2xl:p-[50px]">
+      <!-- Header -->
+      <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+        <h3 class="text-[18px] lg-text-[20px] 2xl:text-[24px] font-semibold">Graphic Design for Beginners</h3>
+        <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+          <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+            Discover the fundamentals of graphic design, including typography, color theory, layout design, and image manipulation techniques. Create visually stunning designs for print and digital media.
+          </p>
+          <a href="#"
+            class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-[rgba(252,252,253,1)] rounded-md border border-[rgba(241,241,243,1)]">
+            View Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        class="flex items-center justify-between gap-[10px] lg-[20px] 2xl:[30px] h-[100px] lg:h-[280px] 2xl:h-[400px] mb-6">
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/home-courses-4.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-32.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-33.png" alt="course">
+        </div>
+      </div>
+
+      <!-- Duration -->
+      <div class="flex items-center justify-between gap-x-4 w-full flex-wrap mb-10">
+        <div class="flex items-center gap-2">
+          <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">
+            10 Weeks</span>
+          <span
+            class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Beginner</span>
+        </div>
+        <h4 class="font-semibold text-lg">By Sarah Thompson</h4>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="border border-[rgba(241,241,243,1)] rounded-lg px-6 md:px-0">
+        <div class="border-b border-[rgba(241,241,243,1)] px-0 md:px-5 py-5 ">
+          <h3 class="font-semibold">Curriculum</h3>
+        </div>
+        <div class="md:py-6 flex flex-col md:flex-row items-start justify-evenly">
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">01</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to Graphic Design</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">02</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Typography and Color Theory</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">03</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Layout Design and Composition</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">04</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Image Editing and Manipulation</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">05</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Designing for Print and Digital Media</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Item -->
+    <div class="my-[50px] lg:my-[100px] bg-white rounded-xl p-6 lg:p-10 2xl:p-[50px]">
+      <!-- Header -->
+      <div class="mb-[40px] lg:mb-[60px] 2xl:mb-[80px]">
+        <h3 class="text-[18px] lg-text-[20px] 2xl:text-[24px] font-semibold">Front-End Web Development</h3>
+        <div class="flex flex-col items-start md:flex-row md:items-center justify-between gap-5">
+          <p class="w-full md:w-[60%] text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+            Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks like Bootstrap and React. Build interactive and responsive websites.
+          </p>
+          <a href="#"
+            class="inline-block w-fit py-3 px-4 text-sm md:py-3 md:px-6 lg:text-base font-medium text-gray-900 bg-[rgba(252,252,253,1)] rounded-md border border-[rgba(241,241,243,1)]">
+            View Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        class="flex items-center justify-between gap-[10px] lg-[20px] 2xl:[30px] h-[100px] lg:h-[280px] 2xl:h-[400px] mb-6">
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/home-courses-5.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-42.png" alt="course">
+        </div>
+        <div class="flex-1 rounded-md overflow-hidden h-full">
+          <img class="w-full h-full object-cover" src="./src/assets/images/courses-43.png" alt="course">
+        </div>
+      </div>
+
+      <!-- Duration -->
+      <div class="flex items-center justify-between gap-x-4 w-full flex-wrap mb-10">
+        <div class="flex items-center gap-2">
+          <span class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">
+            10 Weeks</span>
+          <span
+            class="py-2 px-4 text-[rgba(76,76,77,1)] border  border-[rgba(241,241,243,1)] rounded-md">Intermediate</span>
+        </div>
+        <h4 class="font-semibold text-lg">By Michael Adams</h4>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="border border-[rgba(241,241,243,1)] rounded-lg px-6 md:px-0">
+        <div class="border-b border-[rgba(241,241,243,1)] px-0 md:px-5 py-5 ">
+          <h3 class="font-semibold">Curriculum</h3>
+        </div>
+        <div class="md:py-6 flex flex-col md:flex-row items-start justify-evenly">
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">01</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">HTML Fundamentals</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">02</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">CSS Styling and Layouts</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">03</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">JavaScript Basics</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">04</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Building Responsive Websites</p>
+          </div>
+          <div class="flex-1 md:px-10 py-6 border-b md:border-b-0 w-full md:border-r border-[rgba(241,241,243,1)]">
+            <span class="text-[30px] lg:text-[40px] 2xl:text-[50px] font-extrabold">05</span>
+            <p class="font-medium text-[rgba(51,51,51,1)]">Introduction to Bootstrap and React</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="pt-[100px] pb-[30px] bg-white">
+    <div class="wrapper flex flex-wrap gap-10 border-b border-[rgba(241, 241, 243, 1)] mb-8">
+
+      <div class="flex-grow">
+        <img class="w-14 h-14 mb-10" src="./src/assets/icons/Logo.svg" alt="logo">
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/email.svg" alt="email">
+          <p>hello@skillbridge.com</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/phone.svg" alt="phone">
+          <p>+91 91813 23 2309</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/location-icon.svg" alt="location">
+          <p>Somewhere in the World</p>
+        </span>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">Home</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">Benefits</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">Our Courses</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">Our Testimonials</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">Our FAQ</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Company</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Achievements</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Our Goals</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <div class="flex items-center gap-2">
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.facebook.com">
+            <img src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.x.com">
+            <img src="./src/assets/icons/twitter-icon.svg" alt="twitter">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.linkedin.com">
+            <img src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-[rgba(101,101,103,1)]">© 2023 Skillbridge. All rights reserved.</p>
+  </footer>
+
 </body>
+
 </html>
