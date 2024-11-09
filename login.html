@@ -35,20 +35,20 @@
     $(document).ready(function () {
       $(".owl-carousel").owlCarousel({
         loop: true,
-        items: 1, // Show one item per section
-        nav: true, // Enable navigation buttons
+        items: 1,
+        nav: true,
         navText: [
           "<div class='bg-white px-4 py-3 mt-2 rounded-md shadow-md cursor-pointer'>&#8592;</div>",
           "<div class='bg-white px-4 py-3 mt-2 rounded-md shadow-md cursor-pointer'>&#8594;</div>"
         ],
-        dots: false, // Disable dots if not needed
+        dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         responsive: {
-          0: { items: 1 },  // 1 item on small screens
-          768: { items: 1 },  // 1 item on tablets
-          1024: { items: 1 }  // 1 item on larger screens
+          0: { items: 1 }, 
+          768: { items: 1 }, 
+          1024: { items: 1 } 
         }
       });
     });

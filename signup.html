@@ -1,11 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skill Bridge - Sign Up</title>
+
+  <link rel="stylesheet" href="./css/owl.carousel.min.css">
+  <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+  <link href="./dist/output.css" rel="stylesheet">
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+
+
+  <script>
+    // Menu Toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("[aria-label='Global'] button");
+      const mobileMenu = document.querySelector("[role='dialog']");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const closeButton = mobileMenu.querySelector("button");
+      closeButton.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    // Testimonials Carousel
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        items: 1,
+        nav: true,
+        navText: [
+          "<div class='bg-white px-4 py-3 mt-2 rounded-md shadow-md cursor-pointer'>&#8592;</div>",
+          "<div class='bg-white px-4 py-3 mt-2 rounded-md shadow-md cursor-pointer'>&#8594;</div>"
+        ],
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 1 },
+          1024: { items: 1 }
+        }
+      });
+    });
+
+  </script>
+
 </head>
-<body>
-  
+
+<body class="bg-[rgb(247,247,248)] font-beVietnam">
+
+  <!-- Header Section -->
+  <header class="p-2 md:p-5">
+
+    <!-- Alert Section -->
+    <a href="./courses.html"
+      class="bg-mainOrange w-full rounded-md flex items-center justify-center gap-5 py-[14px] px-1">
+      <p class="text-white text-xs md:text-lg">Free Courses 🌟 Sale Ends Soon, Get It Now</p>
+      <img class="w-[20px] h-[20px]" src="./src/assets/icons/arrow-right-white.svg" alt="arrow">
+    </a>
+    <div class="wrapper">
+
+      <!-- Navbar Section -->
+      <nav class="flex items-center justify-between py-6" aria-label="Global">
+        <div class="flex mr-10">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Skill Bridge</span>
+            <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden order-4 ml-2">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <img class="h-8 w-8" src="./src/assets/icons/mobile-menu.svg" alt="menu">
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
+          <a href="./index.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Home</a>
+          <a href="./courses.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Courses</a>
+          <a href="./about.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">About Us</a>
+          <a href="./pricing.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Pricing</a>
+          <a href="./contact.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Contact</a>
+        </div>
+        <div class="flex justify-end gap-1 flex-grow lg:flex-grow-0">
+          <a href="./signup.html" class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md">Sign Up</a>
+          <a href="./login.html"
+            class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md bg-mainOrange text-white">Login</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Section -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="./index.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Skill Bridge</span>
+              <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="logo">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="./courses.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Courses</a>
+                <a href="./about.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About
+                  Us</a>
+                <a href="./pricing.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="./contact.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section
+    class="wrapper flex flex-col-reverse justify-between md:flex-row gap-[50px] lg:gap-[80px] 2xl-[100px] my-10 mb-16">
+
+    <div class="flex flex-1 w-full md:w-1/2 flex-col items-start gap-14">
+      <div class="flex flex-col items-start justify-between gap-4">
+        <h3 class="text-[28px] lg-text-[30px] 2xl:text-[38px] font-semibold">
+          Students Testimonials
+        </h3>
+        <p class="text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)]">
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+          dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+      </div>
+
+      <!-- Carousel Section -->
+      <div class="owl-carousel w-full">
+        <!-- Testimonial Item 1 -->
+        <div class="bg-white w-full rounded-md border border-[rgba(241,241,243,1)]">
+          <div class="p-4 lg:p-8 pb-0 h-44">
+            <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-4">
+              The web design course provided a solid foundation for me. The instructors were knowledgeable and
+              supportive, and the interactive learning environment was engaging. I highly recommend it!
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between px-2 md:px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+            <div class="flex items-center gap-4">
+              <img class="!w-12 h-12 rounded-full" src="./src/assets/images/testimonial-1.png" alt="">
+              <h4 class="font-semibold">Sarah L</h4>
+            </div>
+            <a href="#"
+              class="py-3 px-2 text-sm md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+              Read Full Story
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial Item 2 -->
+        <div class="bg-white w-full rounded-md border border-[rgba(241,241,243,1)]">
+          <div class="p-4 lg:p-8 pb-0 h-44">
+            <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-4">
+              The UI/UX design course exceeded my expectations. The instructor's expertise and practical assignments
+              helped me improve my design skills. I feel more confident in my career now. Thank you!
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between px-2 md:px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+            <div class="flex items-center gap-4">
+              <img class="!w-12 h-12 rounded-full" src="./src/assets/images/testimonial-2.png" alt="">
+              <h4 class="font-semibold">John D</h4>
+            </div>
+            <a href="#"
+              class="py-3 px-2 text-sm md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+              Read Full Story
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial Item 3 -->
+        <div class="bg-white w-full rounded-md border border-[rgba(241,241,243,1)]">
+          <div class="p-4 lg:p-8 pb-0 h-44">
+            <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-4">
+              The mobile app development course was fantastic! The step-by-step tutorials and hands-on projects helped
+              me grasp the concepts easily. I'm now building my own app. Great course!
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between px-2 md:px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+            <div class="flex items-center gap-4">
+              <img class="!w-12 h-12 rounded-full" src="./src/assets/images/testimonial-3.png" alt="">
+              <h4 class="font-semibold">ُEmily R</h4>
+            </div>
+            <a href="#"
+              class="py-3 px-2 text-sm md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+              Read Full Story
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial Item 3 -->
+        <div class="bg-white w-full rounded-md border border-[rgba(241,241,243,1)]">
+          <div class="p-4 lg:p-8 pb-0 h-44">
+            <p class="text-[rgba(51, 51, 51, 1)] text-[14px] md:text-base mb-4">
+              I enrolled in the graphic design course as a beginner, and it was the perfect starting point. The
+              instructor's guidance and feedback improved my design abilities significantly. I'm grateful for this
+              course!
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between px-2 md:px-6 py-6 bg-[rgba(252,252,253,1)] border-t border-slate-300">
+            <div class="flex items-center gap-4">
+              <img class="!w-12 h-12 rounded-full" src="./src/assets/images/testimonial-4.png" alt="">
+              <h4 class="font-semibold">Michael K</h4>
+            </div>
+            <a href="#"
+              class="py-3 px-2 text-sm md:px-7 lg:text-base font-medium text-gray-900 bg-lightGray rounded-md">
+              Read Full Story
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End of Carousel Section -->
+    </div>
+
+    <div class="flex-1 p-8 md:p-10 2xl:p-[50px] bg-white rounded-lg shadow-md h-fit">
+      <div class="flex flex-col justify-center">
+        <div class="sm:mx-auto sm:w-full">
+          <h1 class="mt-10 mb-2 text-center text-3xl font-bold tracking-tight text-gray-900">Sign Up</h1>
+          <p class="text-gray-900 text-sm md:text-base 2xl:text-lg text-center">Create an account to unlock exclusive
+            features.</p>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full">
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label for="name" class="block font-medium text-gray-900">Full Name</label>
+              <div class="mt-2">
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Enter your Name"
+                  class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 bg-[rgba(252,252,253,1)] sm:text-sm/6">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block font-medium text-gray-900">Email</label>
+              <div class="mt-2">
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your Email"
+                  class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 bg-[rgba(252,252,253,1)] sm:text-sm/6">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
+                <div class="text-sm">
+                </div>
+              </div>
+              <div class="mt-2 flex- items-center justify-between">
+                <input id="password" name="password" type="password" autocomplete="current-password" required
+                  placeholder="Enter your Password"
+                  class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 bg-[rgba(252,252,253,1)] sm:text-sm/6">
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div>
+                <input id="checkbox" name="checkbox" type="checkbox"
+                  class="block w-6 h-6 accent-mainOrange checked:bg-maaccent-mainOrange cursor-pointer rounded-md py-1.5 shadow-sm">
+              </div>
+              <label for="checkbox" class="block text-sm/6 font-medium text-[rgba(101,101,103,1)]">
+                I agree with
+                <a href="#" class="underline">Terms</a>
+                of Use and
+                <a href="#" class="underline">Privacy Policy</a>
+              </label>
+            </div>
+
+            <div>
+              <button type="submit"
+                class="flex w-full justify-center rounded-md bg-mainOrange p-3 font-semibold text-white shadow-sm">Sign
+                Up
+              </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="flex-1 h-[1px] border-b border-[rgb(228,228,231)]"></span>
+              <span class="text-[rgb(152,152,154)]">OR</span>
+              <span class="flex-1 h-[1px] border-b border-[rgb(228,228,231)]"></span>
+            </div>
+
+            <div>
+              <button type="submit"
+                class="flex w-full justify-center items-center gap-3 rounded-md bg-[rgb(247,247,248)] p-4 shadow-sm border border-[rgba(241,241,243)]">
+                <img src="./src/assets/icons/google-icon.svg" class="w-7 h-7">
+                <span class="text-gray-900 font-semibold text-base">Sign Up with Google</span>
+              </button>
+            </div>
+
+            <p class="text-center text-gray-900 flex items-center justify-center gap-1">Already have an account?
+              <a href="./signup.html" class="flex items-center gap-1 underline">Login
+                <img src="./src/assets/icons/black-top-right-arrow.svg" alt="arrow">
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="pt-[100px] pb-[30px] bg-white">
+    <div class="wrapper flex flex-wrap gap-10 border-b border-[rgb(241, 241, 243,)] mb-8">
+
+      <div class="flex-grow">
+        <img class="w-14 h-14 mb-10" src="./src/assets/icons/Logo.svg" alt="logo">
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/email.svg" alt="email">
+          <p>hello@skillbridge.com</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/phone.svg" alt="phone">
+          <p>+91 91813 23 2309</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/location-icon.svg" alt="location">
+          <p>Somewhere in the World</p>
+        </span>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">Home</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">Benefits</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">Our Courses</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">Our Testimonials</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">Our FAQ</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Company</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Achievements</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Our Goals</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <div class="flex items-center gap-2">
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.facebook.com">
+            <img src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.x.com">
+            <img src="./src/assets/icons/twitter-icon.svg" alt="twitter">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.linkedin.com">
+            <img src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-[rgba(101,101,103,1)]">© 2023 Skillbridge. All rights reserved.</p>
+  </footer>
+
 </body>
+
 </html>
