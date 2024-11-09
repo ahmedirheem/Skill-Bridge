@@ -1,11 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skill Bridge - Contact</title>
+  <title>Skill Bridge - Contact Us</title>
+
+  <link href="./dist/output.css" rel="stylesheet">
+
+  <script>
+    // Menu Toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("[aria-label='Global'] button");
+      const mobileMenu = document.querySelector("[role='dialog']");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const closeButton = mobileMenu.querySelector("button");
+      closeButton.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+  </script>
+
 </head>
-<body>
-  
+
+<body class="bg-[rgb(247,247,248)] font-beVietnam">
+
+  <!-- Header Section -->
+  <header class="p-2 md:p-5">
+
+    <!-- Alert Section -->
+    <a href="./courses.html"
+      class="bg-mainOrange w-full rounded-md flex items-center justify-center gap-5 py-[14px] px-1">
+      <p class="text-white text-xs md:text-lg">Free Courses 🌟 Sale Ends Soon, Get It Now</p>
+      <img class="w-[20px] h-[20px]" src="./src/assets/icons/arrow-right-white.svg" alt="arrow">
+    </a>
+    <div class="wrapper">
+
+      <!-- Navbar Section -->
+      <nav class="flex items-center justify-between py-6" aria-label="Global">
+        <div class="flex mr-10">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Skill Bridge</span>
+            <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden order-4 ml-2">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <img class="h-8 w-8" src="./src/assets/icons/mobile-menu.svg" alt="menu">
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
+          <a href="./index.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Home</a>
+          <a href="./courses.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Courses</a>
+          <a href="./about.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">About Us</a>
+          <a href="./pricing.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Pricing</a>
+          <a href="./contact.html" class="font-normal text-gray-900 py-3 px-5 rounded-md hover:bg-lightGray">Contact</a>
+        </div>
+        <div class="flex justify-end gap-1 flex-grow lg:flex-grow-0">
+          <a href="./signup.html" class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md">Sign Up</a>
+          <a href="./login.html"
+            class="py-2 px-3 text-sm md:py-3 md:px-7 lg:text-base  rounded-md bg-mainOrange text-white">Login</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Section -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="./index.html" class="-m-1.5 p-1.5">
+              <span class="sr-only">Skill Bridge</span>
+              <img class="h-8 w-auto" src="./src/assets/icons/Logo.svg" alt="logo">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="./courses.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Courses</a>
+                <a href="./about.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About
+                  Us</a>
+                <a href="./pricing.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="./contact.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+
+    <section
+      class="flex flex-col items-start md:flex-row md:items-center justify-between gap-4 pb-8 my-12 border-b border-[rgba(228,228,231,1)]">
+      <h3 class="text-[28px] lg-text-[38px] 2xl:text-[48px] font-semibold flex-1">Contact Us</h3>
+      <p class="text-sm lg:text-base 2xl:text-lg text-[rgba(89,89,90,1)] flex-1">
+        Welcome to SkillBridge's Pricing Plan page, where we offer two comprehensive options to cater to your needs:
+        Free and Pro. We believe in providing flexible and affordable pricing options for our services. Whether you're
+        an individual looking to enhance your skills or a business seeking professional development solutions, we have a
+        plan that suits you. Explore our pricing options below and choose the one that best fits your requirements.
+      </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 bg-white rounded-xl my-12">
+      
+      <form action="#" method="POST"
+        class="col-span-2 p-[30px] lg:p-[60px] 2xl:p-[80px]">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+          <div>
+            <label for="firstName" class="block font-medium text-gray-900">First Name</label>
+            <div class="mt-2">
+              <input id="firstName" name="firstName" type="text" autocomplete="name" required
+                placeholder="Enter First Name"
+                class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset focus:outline-mainOrange ring-gray-300 placeholder:text-gray-400 bg-[rgb(252,252,253)] sm:text-sm/6">
+            </div>
+          </div>
+
+          <div>
+            <label for="lastName" class="block font-medium text-gray-900">Last Name</label>
+            <div class="mt-2">
+              <input id="lastName" name="lastName" type="text" autocomplete="name" required
+                placeholder="Enter Last Name"
+                class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset focus:outline-mainOrange ring-gray-300 placeholder:text-gray-400 bg-[rgb(252,252,253)] sm:text-sm/6">
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block font-medium text-gray-900">Email</label>
+            <div class="mt-2">
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your Email"
+                class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset focus:outline-mainOrange ring-gray-300 placeholder:text-gray-400 bg-[rgb(252,252,253)] sm:text-sm/6">
+            </div>
+          </div>
+
+          <div>
+            <label for="phone" class="block font-medium text-gray-900">Email</label>
+            <div class="mt-2">
+              <input id="phone" name="phone" type="text" required placeholder="Enter Phone Number"
+                class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset focus:outline-mainOrange ring-gray-300 placeholder:text-gray-400 bg-[rgb(252,252,253)] sm:text-sm/6">
+            </div>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label for="subject" class="block font-medium text-gray-900">Subject</label>
+            <div class="mt-2">
+              <input id="subject" name="subject" type="text" required placeholder="Enter The Subject"
+                class="block w-full h-12 rounded-md border-0 p-5 text-gray-900 shadow-sm ring-1 ring-inset focus:outline-mainOrange ring-gray-300 placeholder:text-gray-400 bg-[rgb(252,252,253)] sm:text-sm/6">
+            </div>
+          </div>
+
+          <div class="sm:col-span-2 mt-4">
+            <label for="message" class="block font-medium text-gray-900">Message</label>
+            <div class="mt-2.5">
+              <textarea name="message" id="message" placeholder="Enter you Message here..." rows="6"
+                class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-mainOrange sm:text-sm/6 bg-[rgb(252,252,253)]"></textarea>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="mt-12">
+          <button type="submit"
+            class="block mx-auto rounded-md bg-mainOrange px-4 py-2.5 text-center text-sm font-medium text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mainOrange">Send
+            Your Message</button>
+        </div>
+      </form>
+
+      <div class="p-[30px] lg:p-[45px] 2xl:p-[80px] border-l">
+        
+        <div class="flex flex-col items-center gap-5 bg-[rgb(252,252,253)] border border-[rgb(241,241,243)] rounded-md py-6 px-1 mb-8">
+          <span class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+            <img class="w-6 h-6" src="./src/assets/icons/email.svg" alt="email">
+          </span>
+          <p class="text-sm lg:text-base rgb(76,76,77)">support@skillbridge.com</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-5 bg-[rgb(252,252,253)] border border-[rgb(241,241,243)] rounded-md py-6 px-1 mb-8">
+          <span class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+            <img class="w-6 h-6" src="./src/assets/icons/phone.svg" alt="phone">
+          </span>
+          <p class="text-sm lg:text-base rgb(76,76,77)">+91 00000 00000</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-5 bg-[rgb(252,252,253)] border border-[rgb(241,241,243)] rounded-md py-6 px-1 mb-8">
+          <span class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+            <img class="w-6 h-6" src="./src/assets/icons/location-icon.svg" alt="location">
+          </span>
+          <p class="text-sm lg:text-base rgb(76,76,77)">Some Where in the World</p>
+        </div>
+        <div class="flex flex-col items-center gap-5 bg-[rgb(252,252,253)] border border-[rgb(241,241,243)] rounded-md py-6 px-1">
+          <div class="flex items-center gap-3">
+            <a href="#" class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+              <img class="w-6 h-6" src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+            </a>
+            <a href="#" class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+              <img class="w-6 h-6" src="./src/assets/icons/twitter-icon.svg" alt="twitter">
+            </a>
+            <a href="#" class="flex items-center justify-center w-12 h-12 bg-[rgb(247,247,248)] border border-[rgb(241,241,243)] rounded-md">
+              <img class="w-6 h-6" src="./src/assets/icons/linkedin.svg" alt="linkedin">
+            </a>
+          </div>
+          <p class="text-sm lg:text-base rgb(76,76,77)">Social Profiles</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="pt-[100px] pb-[30px] bg-white">
+    <div class="wrapper flex flex-wrap gap-10 border-b border-[rgb(241, 241, 243,)] mb-8">
+
+      <div class="flex-grow">
+        <img class="w-14 h-14 mb-10" src="./src/assets/icons/Logo.svg" alt="logo">
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/email.svg" alt="email">
+          <p>hello@skillbridge.com</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/phone.svg" alt="phone">
+          <p>+91 91813 23 2309</p>
+        </span>
+        <span class="flex items-center gap-2 mb-5">
+          <img src="./src/assets/icons/location-icon.svg" alt="location">
+          <p>Somewhere in the World</p>
+        </span>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">Home</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">Benefits</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">Our Courses</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">Our Testimonials</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">Our FAQ</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Company</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Achievements</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">Our Goals</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <h4 class="font-semibold mb-[14px]">About Us</h4>
+        <div class="flex items-center gap-2">
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.facebook.com">
+            <img src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.x.com">
+            <img src="./src/assets/icons/twitter-icon.svg" alt="twitter">
+          </a>
+          <a class="w-12 h-12 rounded-md bg-lightGray flex items-center justify-center" href="https://www.linkedin.com">
+            <img src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-[rgba(101,101,103,1)]">© 2023 Skillbridge. All rights reserved.</p>
+  </footer>
+
 </body>
+
 </html>
