@@ -22,16 +22,65 @@
   }
 }
 
+.owl-nav{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: end !important;
+  gap: 1rem !important;
+}
+
 @font-face {
-  font-family: 'Be Vietnam Pro';
-  /* src: url('../src/fonts/BeVietnamPro-Black.ttf'),
-  url('../src/fonts/BeVietnamPro-Bold.ttf'),
-  url('../src/fonts/BeVietnamPro-ExtraBold.ttf'),
-  url('../src/fonts/BeVietnamPro-Light.ttf'),
-  url('../src/fonts/BeVietnamPro-Medium.ttf'),
-  url('../src/fonts/BeVietnamPro-Regular.ttf'),
-  url('../src/fonts/BeVietnamPro-SemiBold.ttf'),
-  url('../src/fonts/BeVietnamPro-Thin.ttf'); */
-  font-weight: 400 500 600 700 800 900; 
+  font-family: "Be Vietnam Pro";
   font-style: normal;
+  font-weight: 900;
+  src: url('../src/fonts/BeVietnamPro-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 800;
+  src: url('../src/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url('../src/fonts/BeVietnamPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url('../src/fonts/BeVietnamPro-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../src/fonts/BeVietnamPro-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/fonts/BeVietnamPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url('../src/fonts/BeVietnamPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 200;
+  src: url('../src/fonts/BeVietnamPro-Thin.ttf') format('truetype');
 }
